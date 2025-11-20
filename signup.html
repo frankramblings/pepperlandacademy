@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>The 18-Month Miracle – Pepperland Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f5f0e8;
+      padding: 1rem;
+      background-image: 
+        radial-gradient(circle at 20% 50%, rgba(218, 165, 32, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(44, 95, 93, 0.05) 0%, transparent 50%);
+    }
+    .container {
+      background: #f5f0e8;
+      padding: 1.75rem 1.5rem 1.75rem 1.5rem;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      animation: fadeIn 0.8s;
+      position: relative;
+    }
+    .wavy-border {
+      position: absolute;
+      top: -8px;
+      left: -8px;
+      right: -8px;
+      bottom: -8px;
+      border: 3px solid transparent;
+      border-radius: 15px;
+      background: linear-gradient(#f5f0e8, #f5f0e8) padding-box,
+                  linear-gradient(90deg, #ffb6c1, #87ceeb, #20b2aa, #daa520) border-box;
+      background-size: 200% 200%;
+      animation: wavyBorder 8s ease infinite;
+      pointer-events: none;
+      z-index: -1;
+    }
+    @keyframes wavyBorder {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+    .logo-container {
+      margin-bottom: 0.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 0.25rem;
+    }
+    .logo-image {
+      max-width: 100%;
+      height: auto;
+      max-height: 280px;
+      width: auto;
+    }
+    h1 {
+      margin: 0.25rem 0 0.5em 0;
+      color: #2c5f5d;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      line-height: 1.2;
+    }
+    .subheading {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #2c5f5d;
+      margin: -0.25rem 0 0.75rem 0;
+      letter-spacing: 0.5px;
+      text-align: center;
+    }
+    .hero-copy {
+      max-width: 34rem;
+      margin: 0.35rem auto 0;
+      text-align: center;
+    }
+    .eyebrow {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #daa520;
+      text-transform: uppercase;
+      display: inline-block;
+      padding: 0.18rem 0.65rem;
+      border-radius: 999px;
+      background: rgba(218, 165, 32, 0.12);
+      letter-spacing: 1.5px;
+      margin-bottom: 0.5rem;
+    }
+    .subhead {
+      color: #2c5f5d;
+      font-size: 1.1rem;
+      margin: 0.5em 0 1.5em 0;
+      line-height: 1.7;
+      font-style: italic;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .section {
+      text-align: left;
+      margin: 1rem 0;
+    }
+    .section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: #2c5f5d;
+      margin-bottom: 0.75rem;
+      text-align: center;
+      letter-spacing: 0.75px;
+    }
+    .section-content {
+      font-family: 'Montserrat', sans-serif;
+      color: #2c5f5d;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+    .hero-cred {
+      font-size: 0.9rem;
+      color: #5a8a88;
+      margin-top: 0.35rem;
+    }
+    .divider {
+      text-align: center;
+      color: #daa520;
+      font-size: 1.5rem;
+      margin: 1.1rem 0;
+      opacity: 0.6;
+    }
+    .privacy-note {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      color: #5a8a88;
+      margin-top: 0.75rem;
+      font-style: italic;
+    }
+    .benefits-list {
+      text-align: left;
+      margin: 0.75rem 0;
+    }
+    .video-section {
+      margin: 0.9rem 0 0.9rem 0;
+      text-align: center;
+    }
+    .video-intro {
+      font-size: 0.9rem;
+      color: #5a8a88;
+      margin: 0 auto 0.5rem auto;
+      max-width: 32rem;
+    }
+    .video-frame {
+      position: relative;
+      width: 100%;
+      max-width: 460px;
+      margin: 0 auto;
+      padding-bottom: 56.25%; /* 16:9 ratio */
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(44, 95, 93, 0.18);
+      background: linear-gradient(135deg, #2c5f5d, #20b2aa, #daa520);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+    }
+    .video-play-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      background: rgba(245, 240, 232, 0.94);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    }
+    .video-play-icon::before {
+      content: "";
+      display: block;
+      width: 0;
+      height: 0;
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      border-left: 18px solid #2c5f5d;
+      margin-left: 3px;
+    }
+    .faq-item {
+      margin-bottom: 0.75rem;
+    }
+    .faq-question {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #2c5f5d;
+      margin-bottom: 0.5rem;
+    }
+    .faq-answer {
+      font-family: 'Montserrat', sans-serif;
+      color: #2c5f5d;
+      line-height: 1.7;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0.35rem 0;
+    }
+    li {
+      padding: 0.35rem 0;
+      color: #2c5f5d;
+      line-height: 1.6;
+    }
+    .icon-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    .icon-list li i {
+      color: #daa520;
+      font-size: 1.1rem;
+      margin-top: 0.15rem;
+      flex-shrink: 0;
+    }
+    .icon-list li span {
+      display: block;
+    }
+    form {
+      display: flex;
+      gap: 0.75rem;
+      flex-direction: column;
+      margin-top: 1rem;
+    }
+    input[type="email"] {
+      font-family: 'Montserrat', sans-serif;
+      padding: 0.85em 1em;
+      border: 2px solid #2c5f5d;
+      border-radius: 8px;
+      font-size: 1em;
+      outline: none;
+      transition: all 0.2s;
+      background: #f5f0e8;
+      color: #2c5f5d;
+    }
+    input[type="email"]:focus {
+      border-color: #daa520;
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(218, 165, 32, 0.2);
+    }
+    input[type="email"]::placeholder {
+      color: #5a8a88;
+      opacity: 0.7;
+    }
+    .primary-cta {
+      background: linear-gradient(135deg, #daa520, #ffb347);
+      color: #2c5f5d;
+      border: 2px solid #2c5f5d;
+    }
+    .secondary-cta {
+      background: transparent;
+      color: #2c5f5d;
+      border: 2px solid #2c5f5d;
+    }
+    .secondary-cta:hover {
+      background: rgba(218, 165, 32, 0.08);
+      box-shadow: none;
+      transform: translateY(0);
+    }
+    button {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      border-radius: 8px;
+      padding: 0.9em 1.2em;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: all 0.2s;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 0.5rem;
+    }
+    .primary-cta:hover {
+      background: linear-gradient(135deg, #ffb347, #daa520);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(44, 95, 93, 0.3);
+    }
+    .primary-cta:active {
+      transform: translateY(0);
+    }
+    button:focus-visible {
+      outline: 3px solid rgba(218, 165, 32, 0.85);
+      outline-offset: 2px;
+    }
+    .message {
+      font-size: 0.95em;
+      margin-top: 0.5em;
+      border-radius: 8px;
+      padding: 0.8em;
+      transition: all 0.2s;
+      display: none;
+      border: 2px solid;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .success {
+      background: #e8f5f3;
+      color: #2c5f5d;
+      border-color: #20b2aa;
+      display: block;
+    }
+    .error {
+      background: #f5e8e8;
+      color: #8b2c2c;
+      border-color: #8b2c2c;
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    @media (max-width: 480px) {
+      .container { 
+        padding: 1.5rem 1.25rem 1.25rem 1.25rem; 
+        gap: 1rem;
+      }
+      h1 { font-size: 1.5rem; }
+      .subhead { font-size: 0.95rem; }
+      .eyebrow { font-size: 0.75rem; }
+      .logo-image {
+        max-height: 220px;
+      }
+      .section-title { font-size: 1.1rem; }
+      .section-content { font-size: 0.9rem; }
+      .divider { margin: 1.25rem 0; font-size: 1.2rem; }
+      .faq-question { font-size: 1rem; }
+      .privacy-note { font-size: 0.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="wavy-border"></div>
+    
+    <div class="logo-container">
+      <img src="logo.png" alt="The Pepperland Academy logo" class="logo-image">
+    </div>
+    
+    <div>
+      <div class="eyebrow">New Beatles course launching soon</div>
+      <h1>The 18-Month Miracle</h1>
+      <h2 class="subheading">From Rubber Soul to Revolver to Sgt. Pepper</h2>
+      <div class="hero-copy">
+        <p class="section-content">A guided listening experience through the Beatles' fastest era of growth using track teardowns, harmony insights, and the stories behind it all.</p>
+      </div>
+    </div>
+
+    <form id="email-form" autocomplete="off">
+      <input type="email" id="email" name="email" placeholder="Enter your email" required autocomplete="email">
+      <button type="submit" class="primary-cta">Get early access</button>
+      <p class="section-content" style="text-align:center; margin-bottom:0.5rem; font-size:0.9rem; color:#5a8a88; font-weight:400; opacity:0.85;">
+        Join the launch list. You’ll get an email when the course opens and a free mini-lesson right away.
+      </p>
+      <div id="form-message" class="message"></div>
+    </form>
+
+    <p class="section-content hero-cred">Created by a lifelong Beatles fan who's spent years deep in the music, the lore, and the stories behind it all.</p>
+
+    <div class="video-section">
+      <div class="section-title">A quick hello</div>
+      <div class="video-frame">
+        <!-- Placeholder UI thumbnail. Replace this with your Wistia or YouTube embed when ready. -->
+        <div class="video-play-icon"></div>
+      </div>
+    </div>
+
+    <div class="benefits-list">
+      <div class="section-title">You'll get:</div>
+      <ul class="section-content icon-list">
+        <li><i class="fa-solid fa-bell"></i><span>First access to enrollment</span></li>
+        <li><i class="fa-solid fa-headphones-simple"></i><span>A bonus mini-lesson on "In My Life"</span></li>
+        <li><i class="fa-solid fa-tags"></i><span>Early-bird pricing — get the ticket to ride before anyone else.</span></li>
+        <li><i class="fa-solid fa-wand-magic-sparkles"></i><span>Behind-the-scenes updates</span></li>
+      </ul>
+    </div>
+    
+    <div class="divider">⸻</div>
+    
+    <div class="section">
+      <div class="section-title">Who it's for</div>
+      <ul class="section-content icon-list">
+        <li><i class="fa-solid fa-star"></i><span>Fans who want to understand why these songs work</span></li>
+        <li><i class="fa-solid fa-chart-line"></i><span>Listeners curious about the band's rapid artistic growth</span></li>
+        <li><i class="fa-solid fa-magnifying-glass"></i><span>Anyone who wants a deeper look at the most creative 18 months in Beatles history</span></li>
+      </ul>
+      <div style="text-align: center; margin-top: 1rem;">
+        <button type="button" class="secondary-cta" onclick="document.getElementById('email').scrollIntoView({behavior: 'smooth'});" style="margin-top: 0;">Get early access</button>
+      </div>
+    </div>
+    
+  </div>
+  <script>
+    // TODO: Replace with your actual Google Apps Script Web App URL
+    const GOOGLE_SCRIPT_URL = "YOUR_GOOGLE_SCRIPT_URL_HERE";
+
+    const form = document.getElementById('email-form');
+    const emailInput = document.getElementById('email');
+    const msg = document.getElementById('form-message');
+
+    function showMessage(text, type) {
+      msg.textContent = text;
+      msg.className = "message " + type;
+      msg.style.display = 'block';
+    }
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = emailInput.value.trim();
+
+      // Simple email validation
+      if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,}$/.test(email)) {
+        showMessage("Please enter a valid email address.", "error");
+        return;
+      }
+
+      showMessage("Subscribing…", "");
+
+      fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: `email=${encodeURIComponent(email)}`
+      })
+      .then(res => res.ok ? res.text() : Promise.reject('Network response was not ok'))
+      .then(response => {
+        emailInput.value = "";
+        showMessage("Thank you for subscribing!", "success");
+      })
+      .catch(error => {
+        showMessage("There was an error. Please try again later.", "error");
+      });
+    });
+  </script>
+</body>
+</html>
